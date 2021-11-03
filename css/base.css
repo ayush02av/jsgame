@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+	--loader-time: 3s;
+	--header-height: 70px;
+
+	--primary-1: #F5F7CD;
+	--primary-2: #4A2731;
+	--primary-3: #393E41;
+
+	--secondary-1: #544343;
+	--secondary-2: #FFFFFF;
+	--secondary-3: #9395D3;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.element::-webkit-scrollbar { width: 0 !important }
+
+html{
+	scroll-behavior: smooth;
+}
+
+*{
+	margin: 0; padding: 0;
+	list-style: none; text-decoration: none; outline: none;
+}
+
+body{
+	font-family: Roboto; font-size: 20px;
+	background: var(--primary-1); color: var(--primary-2);
+}
+
+img{ max-width: 100%; }
+
+@keyframes loader-animation{
+	0%{ opacity: 1; }
+	100%{ opacity: 0; }
+}
+
+#loader, #loader>img{
+	width: 100%; height: 100vh;
+	animation: loader-animation var(--loader-time) ease-in;
+}
+
+@keyframes loader-bar-animation{
+	0%{ width: 0%; }
+	100%{ width: 100%; }
+}
+#loader-bar{
+	z-index: 10; position: absolute; top: 0;
+	background: var(--primary-3);
+	animation: loader-bar-animation var(--loader-time);
+	height: calc(var(--header-height) / 2);
+}
+
+#root{
+	display: none;
+}
+
+.clickable{ cursor: pointer; }
+.hover-highlight:hover{ text-shadow: 1px 1px 10px var(--secondary-3); transition: 0.2s; }
+
+#header-container{
+	background: var(--secondary-1); color: var(--secondary-2);
+	width: 100%; height: var(--header-height); line-height: var(--header-height);
+	display: flex; justify-content: center;
+	font-size: 22px; font-family: Audiowide;
+}
+#header-container > li{
+	display: flex;
+	margin: 0 30px;
+}
+
+.section{
+	display: flex; flex-wrap: wrap;
+	justify-content: center;
+}
+
+#main{
+	padding: 20px;
+}
+
+.big-inner-section{
+	flex: 1 1 500px;
+}
+
+.small-inner-section{
+	flex: 1 1 200px;
+}
